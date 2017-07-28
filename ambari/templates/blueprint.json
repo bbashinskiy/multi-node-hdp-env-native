@@ -1,0 +1,151 @@
+{
+  "host_groups" : [
+    {
+      "components" : [
+        {
+          "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name" : "ZOOKEEPER_SERVER"
+        },
+        {
+          "name" : "NAMENODE"
+        },
+        {
+          "name" : "HDFS_CLIENT"
+        },
+        {
+          "name" : "DATANODE"
+        },
+	{
+          "name" : "ACTIVITY_ANALYZER"
+        },
+	{
+          "name" : "METRICS_MONITOR"
+        },
+        {
+          "name" : "METRICS_GRAFANA"
+        },
+	{
+          "name" : "HST_AGENT"
+        },
+        {
+          "name" : "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name" : "YARN_CLIENT"
+        },
+        {
+          "name" : "HST_SERVER"
+        }
+	     
+      ],
+      "configurations" : [ ],
+      "name" : "host_group_1",
+      "cardinality" : "1"
+    },
+    {
+      "components" : [
+	{
+          "name" : "NODEMANAGER"
+        },
+        {
+          "name" : "SECONDARY_NAMENODE"
+        },
+        {
+          "name" : "HST_AGENT"
+        },
+        {
+          "name" : "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name" : "YARN_CLIENT"
+        },
+        {
+          "name" : "HDFS_CLIENT"
+        },
+        {
+          "name" : "DATANODE"
+        },
+        {
+          "name" : "HISTORYSERVER"
+        },
+        {
+          "name" : "METRICS_MONITOR"
+        },
+        {
+          "name" : "APP_TIMELINE_SERVER"
+        },
+        {
+          "name" : "RESOURCEMANAGER"
+        }
+      ],
+      "configurations" : [ ],
+      "name" : "host_group_2",
+      "cardinality" : "1"
+    },
+    {
+      "components" : [
+	{
+          "name" : "NODEMANAGER"
+        },
+        {
+          "name" : "HST_AGENT"
+        },
+        {
+          "name" : "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name" : "YARN_CLIENT"
+        },
+        {
+          "name" : "HDFS_CLIENT"
+        },
+        {
+          "name" : "DATANODE"
+        },
+        {
+          "name" : "METRICS_MONITOR"
+        },
+        {
+          "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name" : "METRICS_COLLECTOR"
+        }
+      ],
+      "configurations" : [ ],
+      "name" : "host_group_3",
+      "cardinality" : "1"
+    }
+  ],
+  "settings" : [
+    {
+      "recovery_settings" : [
+        {
+          "recovery_enabled" : "true"
+        }
+      ]
+    },
+    {
+      "service_settings" : [
+        {
+          "recovery_enabled" : "true",
+          "name" : "AMBARI_METRICS"
+        }
+      ]
+    },
+    {
+      "component_settings" : [
+        {
+          "recovery_enabled" : "true",
+          "name" : "METRICS_COLLECTOR"
+        }
+      ]
+    }
+  ],
+  "Blueprints" : {
+    "stack_name" : "HDP",
+    "stack_version" : "2.3"
+  }
+}

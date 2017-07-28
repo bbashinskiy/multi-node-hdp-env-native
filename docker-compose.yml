@@ -1,0 +1,58 @@
+version: '2'
+services:
+  ambari:
+    hostname: ambari-0
+    restart: always
+    privileged: true
+    build: ./ambari
+    image: generydey/hdp:ambari
+    ports: 
+      - "8080:8080"
+    depends_on:
+      - master
+      - slave1
+      - slave2
+    networks:
+      main:
+        aliases:
+          - ambari
+
+  master:
+    hostname: hdp-0
+    restart: always
+    privileged: true
+    image: generydey/hdp:node
+    build: ./hdp-node
+    networks:
+      main:
+        aliases:
+    ports:
+        - "8000:8000"
+        - "11000:11000"
+        - "50070:50070"
+        - "2222:22"
+
+  slave1:
+    hostname: hdp-1
+    restart: always
+    privileged: true
+    image: generydey/hdp:node
+    build: ./hdp-node
+    networks:
+      main:
+        aliases:
+    ports:
+        - "8088:8088"    
+
+  slave2:
+    hostname: hdp-2
+    restart: always
+    privileged: true
+    image: generydey/hdp:node
+    build: ./hdp-node
+    networks:
+      main:
+        aliases:
+
+networks:
+  main:

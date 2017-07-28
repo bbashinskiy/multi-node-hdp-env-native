@@ -1,0 +1,28 @@
+{
+    "blueprint": "c1",
+    "default_password": "admin",
+    "host_groups": [
+        {
+          "hosts": [
+              { "fqdn": "hdp-0.hdp.default.svc.cluster.local" }
+          ],
+          "name": "host_group_1",
+          "configurations" : [ ]
+        },
+        {
+          "hosts": [
+              { "fqdn": "hdp-1.hdp.default.svc.cluster.local" }
+          ],
+          "name": "host_group_2",
+          "configurations" : [ ]
+        },
+        {
+          "hosts": [
+              { "fqdn": "hdp-2.hdp.default.svc.cluster.local" }
+          ],
+          "name": "host_group_3",
+          "configurations" : [ ]
+        }
+    ]
+}
+
